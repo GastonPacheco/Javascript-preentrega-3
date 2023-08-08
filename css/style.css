@@ -1,0 +1,386 @@
+.navbar-inferior-contenedor-papa, main .registro .titulo-seccion, main .registro .form-registro, main .hero-seccion, main .productos-destacados .producto-contenedor .producto-card, main .productos-destacados .titulo-seccion, .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box; }
+  
+  ul {
+    list-style: none; }
+  
+  a {
+    text-decoration: none;
+    color: black; }
+  
+  body header .navbar-contenedor-general {
+    background-color: rgba(0, 0, 0, 0.814) !important;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    align-self: normal; }
+    body header .navbar-contenedor-general .contenedor-superior .nav-contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-bottom: 0;
+      padding-left: 10px;
+      width: 100%; }
+      body header .navbar-contenedor-general .contenedor-superior .nav-contenedor .nav-logo .imagen-logo-imagen {
+        background-color: white;
+        border-radius: 50%; }
+      body header .navbar-contenedor-general .contenedor-superior .nav-contenedor .nav-login {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; }
+        body header .navbar-contenedor-general .contenedor-superior .nav-contenedor .nav-login button {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          width: 100%;
+          margin: 0 auto;
+          max-width: 100px;
+          padding-top: 2px;
+          padding-right: 2px;
+          padding-bottom: 2px;
+          padding-left: 2px; }
+        body header .navbar-contenedor-general .contenedor-superior .nav-contenedor .nav-login a {
+          color: brown;
+          text-align: center;
+          grid-column-start: 1;
+          grid-column-end: 3; }
+  
+  .navbar-inferior-contenedor-papa {
+    font-size: 2.2rem; }
+    .navbar-inferior-contenedor-papa .navbar-inferior-contenedor {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px; }
+      .navbar-inferior-contenedor-papa .navbar-inferior-contenedor li a {
+        color: white !important;
+        transition: 1s; }
+        .navbar-inferior-contenedor-papa .navbar-inferior-contenedor li a:hover {
+          transform: scale(1.1); }
+  
+  main .registro .titulo-seccion {
+    background-image: url(../img/matesss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem; }
+    main .registro .titulo-seccion h2 {
+      background-color: rgba(0, 0, 0, 0.502);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 7px;
+      padding-right: 15px;
+      padding-bottom: 7px;
+      padding-left: 15px; }
+  
+  main .registro .form-registro {
+    max-width: 400px;
+    background-color: grey;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: center; }
+  
+  main .hero-seccion {
+    background-image: url(../img/matesss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    color: white;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px; }
+    main .hero-seccion .hero-titulo {
+      text-align: center;
+      font-size: 4rem;
+      background-color: rgba(128, 128, 128, 0.842);
+      padding-top: 5px;
+      padding-right: 15px;
+      padding-bottom: 5px;
+      padding-left: 15px; }
+    main .hero-seccion .hero-texto {
+      font-size: 2rem;
+      font-weight: bold;
+      padding-top: 50px;
+      padding-right: 0;
+      padding-bottom: 50px;
+      padding-left: 0;
+      text-align: center; }
+    main .hero-seccion .hero-link {
+      display: block;
+      font-size: 1.5rem;
+      color: white;
+      background-color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin-top: 25px; }
+  
+  main .galeria-fotos .galeria-contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%; }
+    main .galeria-fotos .galeria-contenedor img {
+      height: 100%;
+      width: 100%;
+      display: block; }
+  
+  main .bienvenidos-seccion .bienvenidos-titulo {
+    font-size: 4rem;
+    background-color: rgba(128, 128, 128, 0.842);
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-align: center; }
+  
+  main .bienvenidos-seccion .bienvenidos-texto {
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgba(44, 47, 46, 0.23); }
+  
+  main .productos-destacados .producto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%; }
+    main .productos-destacados .producto-contenedor .producto-card {
+      border: 1px black solid;
+      border-radius: 5px;
+      transition: 1s;
+      flex-direction: column; }
+      main .productos-destacados .producto-contenedor .producto-card:hover {
+        transform: scale(1.05); }
+      main .productos-destacados .producto-contenedor .producto-card img {
+        width: 100%; }
+      main .productos-destacados .producto-contenedor .producto-card h3 {
+        font-size: 2rem;
+        color: brown;
+        padding-top: 5px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0; }
+      main .productos-destacados .producto-contenedor .producto-card a {
+        border: 1px black solid;
+        border-radius: 20px;
+        background-color: brown;
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        padding-top: 0;
+        padding-right: 7px;
+        padding-bottom: 0;
+        padding-left: 7px; }
+  
+  main .productos-destacados .titulo-seccion {
+    background-image: url(../img/matesss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem; }
+    main .productos-destacados .titulo-seccion h2 {
+      background-color: rgba(0, 0, 0, 0.502);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 7px;
+      padding-right: 15px;
+      padding-bottom: 7px;
+      padding-left: 15px; }
+  
+  main .productos-destacados .producto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%; }
+    main .productos-destacados .producto-contenedor .producto-card {
+      border: 1px black solid;
+      border-radius: 5px;
+      flex-direction: column; }
+      main .productos-destacados .producto-contenedor .producto-card img {
+        width: 100%; }
+      main .productos-destacados .producto-contenedor .producto-card h3 {
+        font-size: 2rem;
+        color: brown;
+        padding-top: 5px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0; }
+      main .productos-destacados .producto-contenedor .producto-card a {
+        border: 1px black solid;
+        border-radius: 20px;
+        background-color: brown;
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        padding-top: 0;
+        padding-right: 7px;
+        padding-bottom: 0;
+        padding-left: 7px; }
+  
+  main .productos-destacados .titulo-seccion {
+    background-image: url(../img/matesss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem; }
+    main .productos-destacados .titulo-seccion h2 {
+      background-color: rgba(0, 0, 0, 0.502);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 7px;
+      padding-right: 15px;
+      padding-bottom: 7px;
+      padding-left: 15px; }
+  
+  main .productos-destacados .producto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%; }
+    main .productos-destacados .producto-contenedor .producto-card {
+      border: 1px black solid;
+      border-radius: 5px;
+      flex-direction: column; }
+      main .productos-destacados .producto-contenedor .producto-card img {
+        width: 100%; }
+      main .productos-destacados .producto-contenedor .producto-card h3 {
+        font-size: 2rem;
+        color: brown;
+        padding-top: 5px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0; }
+      main .productos-destacados .producto-contenedor .producto-card a {
+        border: 1px black solid;
+        border-radius: 20px;
+        background-color: brown;
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        padding-top: 0;
+        padding-right: 7px;
+        padding-bottom: 0;
+        padding-left: 7px; }
+  
+  main .productos-destacados .titulo-seccion {
+    background-image: url(../img/matesss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem; }
+    main .productos-destacados .titulo-seccion h2 {
+      background-color: rgba(0, 0, 0, 0.502);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 7px;
+      padding-right: 15px;
+      padding-bottom: 7px;
+      padding-left: 15px; }
+  
+  main .productos-destacados .producto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%; }
+    main .productos-destacados .producto-contenedor .producto-card {
+      border: 1px black solid;
+      border-radius: 5px;
+      flex-direction: column; }
+      main .productos-destacados .producto-contenedor .producto-card img {
+        width: 100%; }
+      main .productos-destacados .producto-contenedor .producto-card h3 {
+        font-size: 2rem;
+        color: brown;
+        padding-top: 5px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0; }
+      main .productos-destacados .producto-contenedor .producto-card a {
+        border: 1px black solid;
+        border-radius: 20px;
+        background-color: brown;
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        padding-top: 0;
+        padding-right: 7px;
+        padding-bottom: 0;
+        padding-left: 7px; }
+  
+  .footer {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-top: 30px;
+    background-color: grey; }
+    .footer .redes img {
+      width: 45px; }
+    .footer .footer-links {
+      display: flex;
+      gap: 25px;
+      margin-top: 30px; }
+  
+  @media (max-width: 991px) {
+    header .navbar-contenedor-general .contenedor-superior {
+      display: none !important; }
+    .productos-destacados .producto-contenedor {
+      grid-template-columns: 1fr 1fr; } }
+  
+  @media (max-width: 768px) {
+    .productos-destacados .producto-contenedor {
+      grid-template-columns: 1fr; }
+    .navbar-contenedor-general .contenedor-inferior .navbar-toggler .navbar-inferior-contenedor-papa .navbar-inferior-contenedor {
+      flex-direction: column;
+      text-align: center; } }
+
+
+.navbar-collapse{
+    display: flex !important;
+    justify-content: space-around;
+}
+.agregarMateForm{
+    display: flex;
+    justify-content: space-around;
+
+}
+.divButtonGuardarPedido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

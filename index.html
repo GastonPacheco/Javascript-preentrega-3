@@ -1,129 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iconos-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!--CSS-->
-    <link rel="stylesheet" href="estilos.css">
-    <title>Mis Mates</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/blackdog-logo.png" type="image/x-icon">
+  <!-- iconos-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!--css-->
+  <link rel="stylesheet" href="./css/style.css">
+  <!--key words-->
+  <meta name="keywords" content="impresion 3d, regalos, pasteleria, mates, porta joystick, alfajores, lapiceros, rosca, esponja, chocolate, groot, llaveros, maceta, ryu, crash">
+  <!--descripcion-->
+  <meta name="description" content="Blackdog, tu sitio para encontrar el mejor regalo que puedas hacer, explora nuestro contenido que seguro te va a gustar!">
+  <!--open graph-->
+  <meta property="og:type" content="Web site">
+  <meta property="og:title" content="Blackdog Regalos | Tu mejor opcion para regalar!">
+  <meta property="og:url" content="https://github.com/GastonPacheco/BlackDog.git">
+  <meta property="og:image" content="https://">
+  <meta property="og:description" content="Blackdog, tu sitio para encontrar el mejor regalo que puedas hacer, explora nuestro contenido que seguro te va a gustar!">
+  <title>Blackdog Regalos</title>
 </head>
+
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Mis Mates</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-contenedor-general">
+      <div class="container-fluid contenedor-superior">
+          <div class="nav-contenedor" id="navbarSupportedContent">
+              <form class="d-flex nav-buscar">
+                  <input id="buscador" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button id="btnBuscar" class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              <div class="nav-logo">
+                  <img class="imagen-logo-imagen" src="./img/logo-mejorado.png" alt="">
+              </div>
+              <div class="nav-login">
+                  <input type="text" placeholder="usuario">
+                  <input type="text" placeholder="contraseña">
+                  <button>Login</button>
+                  <a href="./pages/crearcuenta.html">Registrate</a>
+              </div>
+          </div>
+      </div>
+      <div class="container-fluid contenedor-inferior">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
           </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <form class="d-flex">
-                <input id="buscador"class="form-control me-2" placeholder="Encuentre su título o tipo deseado" aria-label="Search">
-                <button id="btnBuscar" class="btn btn-outline-success">Buscar</button>
-              </form> 
-              
-            </ul>
-            <ul>
-              <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Ordenar por:</option>
-                <option value="1">Mayor a menor</option>
-                <option value="2">Menor a mayor</option>
-                <option value="3">Alfabeticamente</option>
-              </select>
-            </ul>
-            <ul className="navbar-nav me-auto">  
-              <li className="nav-item " >
-                  <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal" class="btn btn-secondary"><i class="fas fa-shopping-cart fa-1x"></i></a>
-              </li>
+          <div class="collapse navbar-collapse navbar-inferior-contenedor-papa" id="navbarNav">
+              <ul class="navbar-nav navbar-inferior-contenedor">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li>
+                      <a class="nav-link active" aria-current="page" href="./pages/pasteleria.html">Pasteleria</a>
+                  </li>
+                  <li>
+                      <a class="nav-link active" aria-current="page" href="./pages/mates.html">Mates</a>
+                  </li>
+                  <li>
+                      <a class="nav-link active" aria-current="page" href="./pages/varios.html">Varios</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul>
+            <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option selected>Ordenar por:</option>
+              <option value="1">Mayor a menor</option>
+              <option value="2">Menor a mayor</option>
+              <option value="3">Alfabeticamente</option>
+            </select>
           </ul>
-           
-          </div>
-          <div>
-              
-          </div>
-        </div> 
-      </nav>
-    <!-- Btns DarkMode -->
-    <div class="container m-4">
-      <div class="row">
-          <div class="col-3">
-              
-              <button id="botonDarkMode" class="btn btn-dark">Dark</button>
-
-          </div>
-          <div class="col-3">
-              
-              <button id="botonLightMode" class="btn btn-light">Light</button>
-
-          </div>
-
-      </div>
-
-  </div>
-  <br><br>
-    <form>
-      <div class="mb-3">
-        <label for="modelo" class="form-label">Modelo</label>
-        <input type="text" class="form-control" id="modeloInput" aria-describedby="modelo">
-        
-      </div>
-      <div class="mb-3">
-        <label for="tipo" class="form-label">Tipo</label>
-        <input type="text" class="form-control" id="tipoInput" aria-describedby="tipo">
-        
-      </div>
-      <div class="mb-3">
-        <label for="precio" class="form-label">Precio:</label>
-        <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
-        
-      </div>
-    </form>
-    <button type="text" id="guardarMateBtn" class="btn btn-success">Guardar Mate</button>
+          <ul className="navbar-nav me-auto">  
+            <li className="nav-item " >
+                <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal" class="btn btn-secondary"><i class="fas fa-shopping-cart fa-1x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </nav>
+  </header>
+  <main>
     <br><br>
-    <div class="container">
-      <div id="coincidencia"></div>
-      <div id="productos" class="row">
+    <section>
+      <form class="agregarMateForm">
+        <div class="mb-3">
+          <label for="modelo" class="form-label">Tipo</label>
+          <input type="text" class="form-control" id="tituloInput" aria-describedby="modelo">
+        </div>
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="autorInput" aria-describedby="tipo">
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio:</label>
+          <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
+        </div>
+      </form>
+      <div class="divButtonGuardarPedido">
+        <button type="text" id="guardarLibroBtn" class="btn btn-success">Guardar pedido</button>
       </div>
-    </div>
-    
-
-
-    <!--Modal Carrito-->
-    <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="modal-body">
-            
-          </div>
-          <div class="row ml-ato">
-            <p id="precioTotal"></p>
-          </div>
-          <div class="modal-footer">
-            
-            
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="botonFinalizarCompra">Finalizar Compra</button>
+      
+      <br><br>
+      <div class="container">
+        <div id="coincidencia"></div>
+        <div id="productos" class="row">
+        </div>
+      </div>
+      <!-- MODAL -->
+      <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Mates en tu carrito</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="botonFinalizarCompra">Proceder al pago</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </section>
+    <!-- MODAL -->
+  </main>
+    <!-- SCIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
-
-    <script src="class.js"></script>
-    <script src="figuras.js"></script>
-    <script src="darkMode.js"></script>
-
+  <script src="./js/class.js"></script>
+  <script src="./js/figuras.js"></script>
+    <!-- SCRIPTS -->
 </body>
 </html>

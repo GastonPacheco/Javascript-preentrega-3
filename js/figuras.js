@@ -1,39 +1,39 @@
-let objetosacomprar = []
+let matesEnCarrito = []
 
 if (localStorage.getItem("carrito")) {
-    objetosacomprar = JSON.parse(localStorage.getItem("carrito"))
+    matesEnCarrito = JSON.parse(localStorage.getItem("carrito"))
 } else {
-    localStorage.setItem("carrito", JSON.stringify(objetosacomprar))
+    localStorage.setItem("carrito", JSON.stringify(matesEnCarrito))
 }
 
-function buscarproducto(explorado, array) {
-    let buscando = array.filter(
-        (mate) => mate.tipo.toLowerCase().includes(explorado.toLowerCase()) ||
-            mate.modelo.toLowerCase().includes(explorado.toLowerCase())
+function buscarMate(buscado, array) {
+    let busqueda = array.filter(
+        (mate) => mate.tipo.toLowerCase().includes(buscado.toLowerCase()) ||
+            mate.modelo.toLowerCase().includes(buscado.toLowerCase())
     )
 
-    if (buscando.length == 0) {
+    if (busqueda.length == 0) {
         coincidencia.innerHTML = ""
         let crearDiv = document.createElement("div")
-        crearDiv.innerHTML = `<p> No se encontraron coincidencias</p>`
+        crearDiv.innerHTML = `<p> No se encontro el mate</p>`
         coincidencia.appendChild(crearDiv)
-        muestraproductos(array)
+        mostrarListado(array)
     } else {
         coincidencia.innerHTML = ""
-        muestraproductos(buscando)
+        mostrarListado(busqueda)
     }
 }
 
-function ordenMayorMenor(array) {
+function mayorMenor(array) {
     let mayorMenor = [].concat(array)
     mayorMenor.sort((a, b) => (b.precio - a.precio))
-    muestraproductos(mayorMenor)
+    mostrarListado(mayorMenor)
 }
 
-function ordenarMenorMayor(array) {
+function menorMayor(array) {
     let menorMayor = [].concat(array)
     menorMayor.sort((a, b) => (a.precio - b.precio))
-    muestraproductos(menorMayor)
+    mostrarListado(menorMayor)
 }
 
 function ordenarAlfabeticamente(array) {
@@ -42,119 +42,106 @@ function ordenarAlfabeticamente(array) {
      
         return 0;
     })
-    muestraproductos(alfabeticamente)
+    mostrarListado(alfabeticamente)
 }
 
-let divMates = document.getElementById("productos")
-let btnGuardarmate = document.getElementById("guardarmateBtn")
+let divProductos = document.getElementById("productos")
+let btnGuardarMate = document.getElementById("guardarLibroBtn")
 let buscador = document.getElementById("buscador")
-let btnVerProducto = document.getElementById("verProducto")
-let btnOcultarProducto = document.getElementById("ocultarProducto")
-let modalCuerpo = document.getElementById("modal-cuerpo")
+let modalBody = document.getElementById("modal-body")
 let botonCarrito = document.getElementById("botonCarrito")
 let coincidencia = document.getElementById("coincidencia")
 let selectOrden = document.getElementById("selectOrden")
 
-function muestraproductos(array) {
-    divMates.innerHTML = ""
-
+function mostrarListado(array) {
+    divProductos.innerHTML = ""
     for (const mate of array) {
-        let nuevomate = document.createElement("div")
-        nuevomate.classList.add("col-12", "col-md-6", "col-lg-4", "my-4")
-        nuevomate.innerHTML = `<div id="${mate.id}" class="card" style="width: 18rem;">
-        <img class="card-img-top img-fluid" style="height: 200px;"src="assets/${mate.imagen}" alt="${mate.modelo} de ${mate.tipo}">
-        <div class="card-body">
-            <h4 class="card-title">${mate.modelo}</h4>
-            <p>Autor: ${mate.tipo}</p>
-            <p class="">Precio: ${mate.precio}</p>
-        <button id="agregarBtn${mate.id}" class="btn btn-outline-success">Agregar al carrito</button>
-        </div>
-</div>`
-        divMates.appendChild(nuevomate)
-        let btnSumar = document.getElementById(`agregarBtn${mate.id}`)
-
-        btnSumar.addEventListener("click", () => {
-            agregarAlCarrito(mate)
+        let nuevoLibro = document.createElement("div")
+        nuevoLibro.classList.add("col-12", "col-md-6", "col-lg-4", "my-4")
+        nuevoLibro.innerHTML = 
+        `<div id="${mate.id}" class="card" style="width: 18rem;">
+            <img class="card-img-top img-fluid" style="height: 200px;"src="img/${mate.imagen}" alt="${mate.modelo} de ${mate.tipo}">
+            <div class="card-body">
+                <h4 class="card-title">${mate.modelo}</h4>
+                <p>Tipo: ${mate.tipo}</p>
+                <p class="">Precio: ${mate.precio}</p>
+                <button id="agregarBtn${mate.id}" class="btn btn-outline-success">Comprar</button>
+            </div>
+        </div>`
+        divProductos.appendChild(nuevoLibro)
+        let btnAgregar = document.getElementById(`agregarBtn${mate.id}`)
+        btnAgregar.addEventListener("click", () => {
+            agregarCarrito(mate)
         })
     }
 }
 
-function agregarAlCarrito(mate) {
-    objetosacomprar.push(mate)
-    localStorage.setItem("carrito", JSON.stringify(objetosacomprar))
+function agregarCarrito(mate) {
+    matesEnCarrito.push(mate)
+    localStorage.setItem("carrito", JSON.stringify(matesEnCarrito))
 }
 
 function cargarProductosCarrito(array) {
-    modalCuerpo.innerHTML = ""
-
+    modalBody.innerHTML = ""
     array.forEach(productoCarrito => {
-        modalCuerpo.innerHTML += `<div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
-      <img class="card-img-top" height="300px" src="assets/${productoCarrito.imagen}" alt="${productoCarrito.modelo}">
-      <div class="card-body">
-              <h4 class="card-title">${productoCarrito.modelo}</h4>
-          
-              <p class="card-text">$${productoCarrito.precio}</p> 
-              <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
-      </div>    
-  </div>
-`
+        modalBody.innerHTML += 
+        `<div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
+            <img class="card-img-top" height="300px" src="img/${productoCarrito.imagen}" alt="${productoCarrito.modelo}">
+            <div class="card-body">
+                <h4 class="card-title">${productoCarrito.modelo}</h4>
+                <p class="card-text">$${productoCarrito.precio}</p> 
+                <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
+            </div>    
+        </div>`
     });
-
     array.forEach((productoCarrito, indice) => {
         document.getElementById(`botonEliminar${productoCarrito.id}`).addEventListener("click", () => {
             let cardProducto = document.getElementById(`productoCarrito${productoCarrito.id}`)
             cardProducto.remove()
-            objetosacomprar.splice(indice, 1)
-            localStorage.setItem("carrito", JSON.stringify(objetosacomprar))
-
-
+            matesEnCarrito.splice(indice, 1)
+            localStorage.setItem("carrito", JSON.stringify(matesEnCarrito))
         })
-
     });
-
 }
 
-function cargarmate(array) {
-    let inputTipo = document.getElementById("tipoInput")
-    let inputModelo = document.getElementById("modeloInput")
+function cargarLibro(array) {
+    let inputTipo = document.getElementById("autorInput")
+    let inputNombre = document.getElementById("tituloInput")
     let inputPrecio = document.getElementById("precioInput")
-
-    let mateCreado = new mate(array.length + 1, inputTipo.value, inputModelo.value, parseInt(inputPrecio.value), "matesss.jpg")
+    let mateCreado = new Mates(array.length + 1, inputTipo.value, inputNombre.value, parseInt(inputPrecio.value), "matesss.jpg")
     array.push(mateCreado)
-    localStorage.setItem("materia", JSON.stringify(array))
-    muestraproductos(array)
+    localStorage.setItem("almacen", JSON.stringify(array))
+    mostrarListado(array)
     inputTipo.value = ""
-    inputModelo.value = ""
+    inputNombre.value = ""
     inputPrecio.value = ""
 }
 
-btnGuardarmate.addEventListener("click", () => {
-    cargarmate(materia)
+btnGuardarMate.addEventListener("click", () => {
+    cargarLibro(almacen)
 })
-
 buscador.addEventListener("input", () => {
-    buscarproducto(buscador.value, materia)
+    buscarMate(buscador.value, almacen)
 })
-
 botonCarrito.addEventListener("click", () => {
-    cargarProductosCarrito(objetosacomprar)
+    cargarProductosCarrito(matesEnCarrito)
 })
 
 selectOrden.addEventListener("change", () => {
     if (selectOrden.value == 1) {
-        ordenMayorMenor(materia)
+        mayorMenor(almacen)
     }
 
     else if (selectOrden.value == 2) {
-        ordenarMenorMayor(materia)
+        menorMayor(almacen)
     }
 
     else if (selectOrden.value == 3) {
-        ordenarAlfabeticamente(materia)
+        ordenarAlfabeticamente(almacen)
     }
     else {
-        muestraproductos(materia)
+        mostrarListado(almacen)
     }
 })
 
-muestraproductos(materia)
+mostrarListado(almacen)
